@@ -1,11 +1,11 @@
 import { initializeApp } from 'firebase/app'
 import { 
   getAuth, 
-  connectAuthEmulator 
+//   connectAuthEmulator 
 } from 'firebase/auth'
 import { 
   getFirestore, 
-  connectFirestoreEmulator 
+//   connectFirestoreEmulator 
 } from 'firebase/firestore'
 
 // Firebase config من .env
