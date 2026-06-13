@@ -53,9 +53,7 @@ export const createUserProfile = async (
   })
 }
 
-export const getUserProfile = async (
-  uid: string
-): Promise<AppUser | null> => {
+export const getUserProfile = async ( uid: string): Promise<AppUser | null> => {
   const userRef = doc(db, FIRESTORE_COLLECTIONS.users, uid)
   const snapshot = await getDoc(userRef)
   return snapshot.exists() ? (snapshot.data() as AppUser) : null
