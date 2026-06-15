@@ -6,7 +6,7 @@ import { useCart } from '@/hooks/useCart'
 import { useUIStore } from '@/store/uiStore'
 
 export default function Header() {
-  const { user, isAuthenticated } = useAuthContext()
+  const { user, isAuthenticated, isAdmin } = useAuthContext()
   const { logout } = useAuth()
   const { itemCount } = useCart(user?.uid ?? null)
   const theme = useUIStore((s) => s.theme)
@@ -25,6 +25,11 @@ export default function Header() {
 
         <nav className="flex items-center gap-6">
           <Link to="/products">Produkte</Link>
+          {isAdmin && (
+  <Link to="/admin" className="text-purple-500 font-semibold">
+    Admin
+  </Link>
+)}
 
           {/* Theme toggle */}
           <button onClick={toggleTheme} aria-label="Theme wechseln">
